@@ -1,0 +1,22 @@
+{
+  "name": "rhyme-editor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "serve -s build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "syllables-ru": "^1.0.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0",
+    "tailwindcss": "^3.3.3",
+    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.13",
+    "serve": "^14.2.0"
+  }
+}
