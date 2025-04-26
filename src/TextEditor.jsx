@@ -88,11 +88,13 @@ export default function TextEditor() {
     );
 }
 
-/*
-Зависимости:
+/* Зависимости:
+```bash
 npm install react syllables-ru tailwindcss postcss autoprefixer vite serve
+```
 
-Структура проекта:
+* Структура проекта:
+```
 src/
   components/ui/card.jsx
   components/ui/button.jsx
@@ -101,11 +103,19 @@ src/
 index.html
 package.json
 tailwind.config.js
+```
 
-Использование:
-import TextEditor from './TextEditor';
-function App() {
-  return <TextEditor />;
+* Скрипты в `package.json`:
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "serve": "serve -s dist -l 3000"
 }
-export default App;
-*/
+```
+
+* После сборки (папка `dist` по умолчанию):
+```bash
+npm run build
+npm run serve
+```
