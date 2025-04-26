@@ -3,7 +3,7 @@ import { syllabify } from 'syllables-ru';
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 
-// Онлайн-редактор с подсчетом слогов и предложениями рифм на русском (RhymeBrain API) с тёмной темой
+// Онлайн-редактор с подсчетом слогов и предложениями рифм на русском (RhymeBrain API) в зелёной теме
 export default function TextEditor() {
     const editorRef = useRef(null);
     const [syllableCounts, setSyllableCounts] = useState([]);
@@ -44,14 +44,14 @@ export default function TextEditor() {
     };
 
     return (
-        <div className="p-4 max-w-2xl mx-auto min-h-screen bg-gray-900 text-gray-100">
-            <Card className="bg-gray-800 text-gray-100">
+        <div className="p-4 max-w-2xl mx-auto min-h-screen bg-green-900 text-green-100">
+            <Card className="bg-green-800 text-green-100">
                 <CardContent>
                     <div
                         ref={editorRef}
                         contentEditable
                         onInput={handleInput}
-                        className="border border-gray-700 bg-gray-800 text-gray-100 p-2 rounded h-48 overflow-y-auto focus:outline-none placeholder-gray-500"
+                        className="border border-green-700 bg-green-800 text-green-100 p-2 rounded h-48 overflow-y-auto focus:outline-none placeholder-green-500"
                         data-placeholder="Напишите здесь..."
                     />
 
@@ -65,7 +65,7 @@ export default function TextEditor() {
                     </div>
 
                     <div className="mt-4">
-                        <Button variant="outline" onClick={fetchRhymes} className="border-gray-600 text-gray-100">
+                        <Button variant="outline" onClick={fetchRhymes} className="border-green-600 text-green-100">
                             Предложить рифмы
                         </Button>
                         {rhymes.length > 0 && (
@@ -76,7 +76,7 @@ export default function TextEditor() {
                                         <li key={idx}>{rhyme}</li>
                                     ))}
                                 </ul>
-                                <p className="text-sm mt-2 text-gray-400">
+                                <p className="text-sm mt-2 text-green-400">
                                     Рифмы предоставлены <a href="https://rhymebrain.com" target="_blank" rel="noopener noreferrer" className="underline">RhymeBrain.com</a>
                                 </p>
                             </div>
