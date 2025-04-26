@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { syllabify } from 'syllables-ru';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "./components/ui/card";
+import { Button } from "./components/ui/button";
 
 // Онлайн-редактор с подсчетом слогов и предложениями рифм на русском (RhymeBrain API) с тёмной темой
 export default function TextEditor() {
@@ -90,7 +90,17 @@ export default function TextEditor() {
 
 /*
 Зависимости:
-npm install react syllables-ru @/components/ui/card @/components/ui/button
+npm install react syllables-ru tailwindcss postcss autoprefixer vite serve
+
+Структура проекта:
+src/
+  components/ui/card.jsx
+  components/ui/button.jsx
+  index.jsx
+  TextEditor.jsx
+index.html
+package.json
+tailwind.config.js
 
 Использование:
 import TextEditor from './TextEditor';
