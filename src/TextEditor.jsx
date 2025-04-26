@@ -8,6 +8,7 @@ export default function TextEditor() {
     const editorRef = useRef(null);
     const [syllableCounts, setSyllableCounts] = useState([]);
     const [rhymes, setRhymes] = useState([]);
+    const [showGreeting, setShowGreeting] = useState(false);
 
     const countSyllablesInLine = (line) => {
         if (!line.trim()) return 0;
@@ -55,6 +56,21 @@ export default function TextEditor() {
                         data-placeholder="Напишите здесь..."
                     />
 
+                    <div className="mt-4 flex flex-wrap items-center space-x-4">
+                        <Button variant="outline" onClick={fetchRhymes} className="border-green-600 text-green-100">
+                            Предложить рифмы
+                        </Button>
+                        <Button variant="solid" onClick={() => setShowGreeting(true)} className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white">
+                            Показать приветствие
+                        </Button>
+                    </div>
+
+                    {showGreeting && (
+                        <div className="mt-4 p-4 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-lg font-bold rounded-lg animate-pulse">
+                            привет, Оля
+                        </div>
+                    )}
+
                     <div className="mt-4">
                         <h3 className="text-lg font-semibold">Слоги по строкам</h3>
                         <ul className="list-disc list-inside">
@@ -65,11 +81,8 @@ export default function TextEditor() {
                     </div>
 
                     <div className="mt-4">
-                        <Button variant="outline" onClick={fetchRhymes} className="border-green-600 text-green-100">
-                            Предложить рифмы
-                        </Button>
                         {rhymes.length > 0 && (
-                            <div className="mt-2">
+                            <div>
                                 <h3 className="text-lg font-semibold">Рифмы для слова</h3>
                                 <ul className="list-disc list-inside">
                                     {rhymes.map((rhyme, idx) => (
